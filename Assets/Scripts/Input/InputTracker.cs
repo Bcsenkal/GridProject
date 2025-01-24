@@ -8,7 +8,6 @@ public class InputTracker : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
         Managers.EventManager.Instance.ONOnMouseDown(eventData.position);
     }
 }
