@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Managers;
 
 public class SettingsButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Button settingsButton;
     void Start()
     {
-        
+        settingsButton = GetComponent<Button>();
+        settingsButton.onClick.AddListener(OpenSettings);
+        EventManager.Instance.OnSettingsClosed += EnableButton;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OpenSettings()
     {
-        
+        EventManager.Instance.ONOnSettingsButtonClick();
+        settingsButton.interactable = false;
+    }
+
+    void EnableButton()
+    {
+        settingsButton.interactable = true;
     }
 }
