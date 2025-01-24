@@ -71,7 +71,7 @@ namespace Managers
         public event System.Action OnSettingsButtonClick;
         public event System.Action OnSettingsClosed;
         public event System.Action<int> OnRebuildButtonClick;
-        
+
         public void ONOnSettingsButtonClick()
         {
             OnSettingsButtonClick?.Invoke();
@@ -94,6 +94,15 @@ namespace Managers
         {
             ONLevelStart= null;
             ONLevelEnd = null;
+            OnMouseDown = null;
+            OnCreateCrossOnCell = null;
+            OnCheckForMatch = null;
+            OnDisableCross = null;
+            OnCreateCrossMatrix = null;
+            OnCrossMatched = null;
+            OnSettingsButtonClick = null;
+            OnSettingsClosed = null;
+            OnRebuildButtonClick = null;
         }
 
 

@@ -34,6 +34,7 @@ public class RebuildWindow : MonoBehaviour
         StartCoroutine(ShowWindow());
     }
 
+    // try to rebuild the grid with the new size if the input is valid
     private void OnRebuildButtonClick()
     {
         
@@ -48,6 +49,7 @@ public class RebuildWindow : MonoBehaviour
         }
     }
 
+    // smoothly show the window
     IEnumerator ShowWindow()
     {
         canvasGroup.DOFade(1, 0.5f);
@@ -56,6 +58,7 @@ public class RebuildWindow : MonoBehaviour
         canvasGroup.interactable = true;
     }
 
+    // smoothly hide the window
     IEnumerator HideWindow()
     {
         canvasGroup.DOFade(0, 0.5f);

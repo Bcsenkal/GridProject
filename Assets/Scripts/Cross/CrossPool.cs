@@ -20,6 +20,7 @@ public class CrossPool : MonoBehaviour
         
     }
 
+    // Create a pool of crosses, and set them to inactive
     private void CreatePool()
     {
         for (int i = 0; i < poolSize; i++)
@@ -31,6 +32,7 @@ public class CrossPool : MonoBehaviour
         }
     }
 
+    // Create an available cross on the cell
     private void CreateCrossOnCell(Cell cell)
     {
         var cross = crosses.Find(c => !c.gameObject.activeInHierarchy);
@@ -46,6 +48,7 @@ public class CrossPool : MonoBehaviour
 
     }
 
+    // Disable the cross
     private void DisableCross(Cross cross)
     {
         cross.gameObject.SetActive(false);

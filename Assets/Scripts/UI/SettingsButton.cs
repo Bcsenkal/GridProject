@@ -14,6 +14,7 @@ public class SettingsButton : MonoBehaviour
         EventManager.Instance.OnSettingsClosed += EnableButton;
     }
 
+    
     void OpenSettings()
     {
         EventManager.Instance.ONOnSettingsButtonClick();

@@ -14,6 +14,7 @@ public class Cross : MonoBehaviour
         Managers.EventManager.Instance.OnCrossMatched += OnCrossMatched;
     }
 
+    // Check if the cross is placed on the same coordinates as the match, if so, disable the cross and check for matches on adjacent cells
     private void OnCrossMatched(int x, int y)
     {
         if(x == (int)coordinates.x && y == (int)coordinates.y)
@@ -29,6 +30,7 @@ public class Cross : MonoBehaviour
         }
     }
 
+    // Reset the cross position and set it to inactive on rebuild at runtime
     public void OnRebuild()
     {
         transform.SetParent(poolParent);

@@ -14,10 +14,10 @@ public class InputHandler : MonoBehaviour
         EventManager.Instance.OnMouseDown += MouseDown;
     }
 
+    //Casting ray from mouse position to world space, checking if it hits any clickable object, and calling Click() method on it
     private void MouseDown(Vector2 position)
     {
         Ray ray = cam.ScreenPointToRay(position);
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 5);
         if (Physics.Raycast(ray, out RaycastHit hit, 100, clickableLayer))
         {
             if (hit.transform.TryGetComponent(out IClickable clickable))

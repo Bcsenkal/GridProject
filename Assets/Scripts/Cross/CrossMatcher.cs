@@ -13,17 +13,20 @@ public class CrossMatcher : MonoBehaviour
         EventManager.Instance.OnDisableCross += OnCrossDisable;
     }
 
+    // On cross placement, check for match
     private void OnCrossPlacement(Cell cell)
     {
         crossMatrix[(int)cell.Coordinates.x, (int)cell.Coordinates.y] = 1;
         CheckForMatch();
     }
 
+    // On cross disable, set the matrix value to 0
     private void OnCrossDisable(Cross cross)
     {
         crossMatrix[(int)cross.Coordinates.x, (int)cross.Coordinates.y] = 0;
     }
 
+    // Check for a match
     private void CheckForMatch()
     {
         var gridSize = crossMatrix.GetLength(0);
@@ -71,6 +74,7 @@ public class CrossMatcher : MonoBehaviour
         }
     }
 
+    // Create the cross matrix
     private void CreateMatrix(int gridSize)
     {
         crossMatrix = new int[gridSize, gridSize];

@@ -178,12 +178,8 @@ MonoBehaviour:
   musicSource: {fileID: 7780827255812520444}
   sfxSource: {fileID: 6366522367355958786}
   extraSfxSource: {fileID: 13730261397722651}
-  musicClip: {fileID: 0}
-  winMusic: {fileID: 8300000, guid: 8a245c37f1a0e4be5bb4df8ddd28744d, type: 3}
-  failMusic: {fileID: 8300000, guid: e1eb979e7058b4a31b96e0ce38675985, type: 3}
-  collectSfx: {fileID: 8300000, guid: d51a07d756d7a4db590629fe6efa128b, type: 3}
-  buttonClickSfx: {fileID: 8300000, guid: 9de16190311904448b226aae7b7ebcce, type: 3}
-  rocinanteSfx: {fileID: 8300000, guid: 2dcec90bc762f40a39db727f8dd00dce, type: 3}
+  collectSfx: {fileID: 0}
+  buttonClickSfx: {fileID: 0}
 --- !u!1 &7290227376890466420
 GameObject:
   m_ObjectHideFlags: 0

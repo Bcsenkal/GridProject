@@ -19,6 +19,7 @@ public class GridCreator : MonoBehaviour
         Invoke(nameof(SendGridInfo),0.1f);
     }
     
+    // Create a grid of cells with the given size, it is totally flexible and can be used in any aspect ratio, well, almost
     [Button("Create Grid",buttonSize:ButtonSizes.Large), GUIColor(0f,0.8f,0)]
     private void CreateGrid()
     {
@@ -54,6 +55,7 @@ public class GridCreator : MonoBehaviour
         }
     }
 
+    // Rebuild the grid with the given size
     private void RebuildGrid(int size)
     {
         gridSize = size;
@@ -61,6 +63,7 @@ public class GridCreator : MonoBehaviour
         SendGridInfo();
     }
 
+    // Send the grid size to the CrossMatcher
     private void SendGridInfo()
     {
         EventManager.Instance.ONOnCreateCrossMatrix(gridSize);
