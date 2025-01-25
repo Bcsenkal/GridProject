@@ -39,6 +39,8 @@ public class CrossPool : MonoBehaviour
         if(cross == null)
         {
             cross = Instantiate(crossPrefab, Vector3.zero, Quaternion.identity, transform);
+            crosses.Add(cross);
+            cross.PoolParent = transform;
         }
         cross.Coordinates = cell.Coordinates;
         cross.transform.SetParent(cell.transform);
