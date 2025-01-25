@@ -19,25 +19,16 @@ public class GridCreator : MonoBehaviour
         Invoke(nameof(SendGridInfo),0.1f);
     }
     
-    // Create a grid of cells with the given size, it is totally flexible and can be used in any aspect ratio, well, almost
+    // Added a button to the inspector to create a grid
     [Button("Create Grid",buttonSize:ButtonSizes.Large), GUIColor(0f,0.8f,0)]
+    // Create a grid of cells with the given size, it is totally flexible and can be used in any aspect ratio, well, almost
     private void CreateGrid()
     {
         var cam = Camera.main;
         float screenWidth = cam.orthographicSize * cam.aspect * 2;
         float screenHeight = cam.orthographicSize * 2;
         float cellSize = Mathf.Min(screenWidth, screenHeight) / gridSize;
-        for(int i = transform.childCount - 1; i >= 0; i--)
-        {
-            if(isRuntime)
-            {
-                transform.GetChild(i).GetComponent<Cell>().Destroy();
-            } 
-            else
-            {
-                DestroyImmediate(transform.GetChild(i).gameObject);
-            }
-        }
+        ClearCurrentGrid();
 
         for (int i = 0; i < gridSize; i++)
         {
@@ -61,6 +52,22 @@ public class GridCreator : MonoBehaviour
         gridSize = size;
         CreateGrid();
         SendGridInfo();
+    }
+
+    // Clear the current grid
+    private void ClearCurrentGrid()
+    {
+        for(int i = transform.childCount - 1; i >= 0; i--)
+        {
+            if(isRuntime)
+            {
+                transform.GetChild(i).GetComponent<Cell>().Destroy();
+            } 
+            else
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+        }
     }
 
     // Send the grid size to the CrossMatcher
